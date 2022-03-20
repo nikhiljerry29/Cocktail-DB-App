@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Style+Script&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav__link {
+   @apply p-2 text-emerald-700 border-b-2 border-white hover:font-bold hover:text-emerald-900 hover:border-amber-600 uppercase;
+}
+.nav__link.active {
+   @apply font-bold text-emerald-900 border-amber-600;
+}

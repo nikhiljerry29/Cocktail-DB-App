@@ -1,4 +1,4 @@
-# Sip Sip 1.0 | CocktailDB
+# Sip Bar | CocktailDB
 
 The drinks recipes react app using [The CocktailDB API](https://www.thecocktaildb.com/api.php) for fetching different drinks data.
 
