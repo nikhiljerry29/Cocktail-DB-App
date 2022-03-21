@@ -14,17 +14,27 @@ export const CocktailProvider = ({ children }) => {
 
    // Get a random cocktail
    const getRandomCocktail = async () => {
+      clearCocktail();
       setIsLoading(true);
-
       const item = await cocktailDB.get("/random.php");
       setCocktail(item.data.drinks[0]);
 
       setIsLoading(false);
    };
 
+   const clearCocktail = () => {
+      setCocktail(null);
+   };
+
    return (
       <CocktailContext.Provider
-         value={{ cocktail, getRandomCocktail, isLoading }}
+         value={{
+            cocktail,
+            getRandomCocktail,
+            clearCocktail,
+            isLoading,
+            setIsLoading,
+         }}
       >
          {children}
       </CocktailContext.Provider>

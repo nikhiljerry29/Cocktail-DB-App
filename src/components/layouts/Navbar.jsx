@@ -7,7 +7,7 @@ function Navbar() {
       <header className='shadow-md'>
          <div className='container mx-auto flex flex-row justify-between items-center p-6 text-gray-900 '>
             <div className='flex items-center'>
-               <GiGlassShot className='text-3xl text-slate-600' />
+               <GiGlassShot className='text-4xl text-slate-600' />
                <NavLink
                   to='/about'
                   className='font-stylescript text-gray-900 text-3xl font-bold pt-1 inline'
@@ -16,9 +16,6 @@ function Navbar() {
                </NavLink>
             </div>
             <nav className='flex items-center gap-3'>
-               <NavLink to='/' activeclassname='active' className='nav__link'>
-                  Home
-               </NavLink>
                <NavLink
                   to='/cocktail/random'
                   activeclassname='active'
