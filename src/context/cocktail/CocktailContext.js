@@ -22,13 +22,9 @@ export const CocktailProvider = ({ children }) => {
       setIsLoading(false);
    };
 
-   const clearCocktail = () => {
-      setCocktail({});
-   };
-
    return (
       <CocktailContext.Provider
-         value={{ cocktail, getRandomCocktail, clearCocktail, isLoading }}
+         value={{ cocktail, getRandomCocktail, isLoading }}
       >
          {children}
       </CocktailContext.Provider>

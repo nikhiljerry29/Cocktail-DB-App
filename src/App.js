@@ -1,10 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./components/layouts/Footer";
 import Navbar from "./components/layouts/Navbar";
-import CocktailContext, {
-   CocktailProvider,
-} from "./context/cocktail/CocktailContext";
+import { CocktailProvider } from "./context/cocktail/CocktailContext";
 import About from "./pages/About";
 import Cocktail from "./pages/Cocktail";
 import Home from "./pages/Home";
