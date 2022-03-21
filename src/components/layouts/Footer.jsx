@@ -1,12 +1,12 @@
 import React from "react";
-import { FaHeart } from "react-icons/fa";
+import { FaHeart, FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function Footer() {
    const footerYear = new Date().getFullYear();
 
    return (
-      <footer className='p-10 flex flex-col justify-center items-center text-center space-y-1'>
+      <footer className='p-10 flex flex-col justify-center items-center text-center space-y-1 relative bg-gray-50'>
          <p>
             Copyright{" "}
             <Link
@@ -27,6 +27,11 @@ function Footer() {
                Nikhil Gupta
             </a>
          </p>
+         <span className='md:hidden absolute bottom-0 left-0 top-1/3 ml-10 z-50'>
+            <Link to={"/"}>
+               <FaHome className='text-3xl rounded-full animate-bounce' />
+            </Link>
+         </span>
       </footer>
    );
 }

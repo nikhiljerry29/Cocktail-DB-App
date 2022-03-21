@@ -73,7 +73,7 @@ function CocktailInfo({ cocktail }) {
             <ul>
                {ingredientList.map((item) => (
                   <li
-                     className='flex flex-row justify-between p-3 bg-zinc-50 my-2 hover:bg-zinc-200 hover:text-zinc-900 transition duration-200 ease-in-out'
+                     className='flex flex-row justify-between p-3 bg-zinc-50 my-2 hover:bg-zinc-200 hover:text-zinc-900 hover:shadow-md hover:translate-x-3 transition duration-300 ease-in-out capitalize'
                      key={item.id}
                      id={item.id}
                   >

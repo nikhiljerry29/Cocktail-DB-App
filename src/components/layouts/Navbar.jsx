@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 function Navbar() {
    return (
-      <header className='shadow-md'>
+      <header className='bg-gray-50'>
          <div className='container mx-auto flex flex-row justify-between items-center p-6 text-gray-900 '>
             <div className='flex items-center'>
                <GiGlassShot className='text-4xl text-slate-600' />
@@ -16,6 +16,13 @@ function Navbar() {
                </NavLink>
             </div>
             <nav className='flex items-center gap-3'>
+               <NavLink
+                  to='/'
+                  activeclassname='active'
+                  className='nav__link hidden md:block'
+               >
+                  Home
+               </NavLink>
                <NavLink
                   to='/cocktail/random'
                   activeclassname='active'
