@@ -7,6 +7,7 @@ function Cocktail() {
       useContext(CocktailContext);
    useEffect(() => {
       getRandomCocktail();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
    if (isLoading) return <Loader />;
