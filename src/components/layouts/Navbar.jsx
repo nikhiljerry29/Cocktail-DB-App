@@ -9,7 +9,7 @@ function Navbar() {
             <div className='flex items-center'>
                <GiGlassShot className='text-3xl text-slate-600' />
                <NavLink
-                  to='/'
+                  to='/about'
                   className='font-stylescript text-gray-900 text-3xl font-bold pt-1 inline'
                >
                   Sip Bar.
@@ -25,6 +25,13 @@ function Navbar() {
                   className='nav__link'
                >
                   Random Mix
+               </NavLink>
+               <NavLink
+                  to='/about'
+                  activeClassName='active'
+                  className='nav__link'
+               >
+                  About
                </NavLink>
             </nav>
          </div>
