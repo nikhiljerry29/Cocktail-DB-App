@@ -16,19 +16,19 @@ function Navbar() {
                </NavLink>
             </div>
             <nav className='flex items-center gap-3'>
-               <NavLink to='/' activeClassName='active' className='nav__link'>
+               <NavLink to='/' activeclassname='active' className='nav__link'>
                   Home
                </NavLink>
                <NavLink
-                  to='/random'
-                  activeClassName='active'
+                  to='/cocktail/random'
+                  activeclassname='active'
                   className='nav__link'
                >
                   Random Mix
                </NavLink>
                <NavLink
                   to='/about'
-                  activeClassName='active'
+                  activeclassname='active'
                   className='nav__link'
                >
                   About
