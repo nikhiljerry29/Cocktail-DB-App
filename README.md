@@ -10,6 +10,9 @@ The drinks recipes react app using [The CocktailDB API](https://www.thecocktaild
 ### Resources Used
 
 1. [Cocktail icon - Flaticon](https://www.flaticon.com/free-icons/cocktail)
+2. [react-lazy-load-image-component](https://www.npmjs.com/package/react-lazy-load-image-component)
+3. [React-Icons]()
+4. [Flowbite]()
 
 ### Instruction
 

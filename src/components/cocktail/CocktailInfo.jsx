@@ -1,8 +1,9 @@
 import React from "react";
-import Badge from "../shared/Badge";
-import { FaWineGlassAlt, FaGlassWhiskey } from "react-icons/fa";
 import { BiCategoryAlt } from "react-icons/bi";
-import Loader from "../layouts/Loader";
+import { FaGlassWhiskey, FaWineGlassAlt } from "react-icons/fa";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import Badge from "../shared/Badge";
 
 function CocktailInfo({ cocktail }) {
    const {
@@ -13,27 +14,29 @@ function CocktailInfo({ cocktail }) {
       strGlass,
       strInstructions,
       strDrinkThumb,
+      strIngredient1,
+      strMeasure1,
    } = cocktail;
-   // strIngredient1,
    // strIngredient2,
    // strIngredient3,
-   // strMeasure1,
    // strMeasure2,
    // strMeasure3,
+
    return (
       <section
          id={idDrink}
          className='p-5 flex flex-col lg:flex-row gap-5 md:justify-center '
       >
          {strDrinkThumb && (
-            <img
-               src={strDrinkThumb}
-               alt={strDrink}
+            <LazyLoadImage
+               effect='blur'
                className='w-full h-72 md:h-96 lg:h-auto lg:max-w-md  object-cover rounded shadow-lg'
+               alt={strDrink}
+               src={strDrinkThumb}
             />
          )}
          <div className='lg:max-w-md'>
-            <h1 className='text-gray-900 text-2xl font-bold tracking-wide'>
+            <h1 className='text-gray-900 text-2xl font-bold tracking-wide capitalize'>
                {strDrink}
             </h1>
             <p className='text-gray-700 text-md my-3'>{strInstructions}</p>
@@ -52,7 +55,12 @@ function CocktailInfo({ cocktail }) {
                </Badge>
             </div>
             <h3>Ingredients</h3>
-            <div></div>
+            <div>
+               <div>
+                  <p>{strIngredient1}</p>
+                  <p>{strMeasure1}</p>
+               </div>
+            </div>
          </div>
       </section>
    );
