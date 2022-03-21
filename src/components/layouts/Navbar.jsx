@@ -9,7 +9,7 @@ function Navbar() {
             <div className='flex items-center'>
                <GiGlassShot className='text-4xl text-slate-600' />
                <NavLink
-                  to='/about'
+                  to='/'
                   className='font-stylescript text-gray-900 text-3xl font-bold pt-1 inline'
                >
                   Sip Bar.
