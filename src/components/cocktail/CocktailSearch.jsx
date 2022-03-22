@@ -11,7 +11,7 @@ function CocktailSearch() {
 
    const handleSubmit = (e) => {
       e.preventDefault();
-      if (text === "") setAlertMsg("Do input text for some exicting stuff ");
+      if (text === "") setAlertMsg("Do input text for some exciting stuff ");
       else getCocktailsByFirstName(text);
    };
 
