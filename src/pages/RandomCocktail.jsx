@@ -1,15 +1,14 @@
 import React, { useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import CocktailInfo from "../components/cocktail/CocktailInfo";
 import Loader from "../components/layouts/Loader";
 import CocktailContext from "../context/cocktail/CocktailContext";
 
-function Cocktail() {
-   const { cocktail, getCocktail, isLoading } = useContext(CocktailContext);
-   const { id } = useParams();
+function RandomCocktail() {
+   const { cocktail, getRandomCocktail, isLoading } =
+      useContext(CocktailContext);
 
    useEffect(() => {
-      getCocktail(id);
+      getRandomCocktail();
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
@@ -17,4 +16,4 @@ function Cocktail() {
    return cocktail && <CocktailInfo cocktail={cocktail} />;
 }
 
-export default Cocktail;
+export default RandomCocktail;

@@ -41,6 +41,20 @@ export const CocktailProvider = ({ children }) => {
       setIsLoading(false);
    };
 
+   // Get a cocktail
+   const getCocktail = async (id) => {
+      setCocktail(null);
+      setIsLoading(true);
+
+      const params = new URLSearchParams({
+         i: id,
+      });
+      const idCocktail = await cocktailDB.get(`/lookup.php?${params}`);
+      setCocktail(idCocktail.data.drinks[0]);
+
+      setIsLoading(false);
+   };
+
    return (
       <CocktailContext.Provider
          value={{
@@ -48,6 +62,7 @@ export const CocktailProvider = ({ children }) => {
             isLoading,
             cocktails,
             getRandomCocktail,
+            getCocktail,
             setIsLoading,
             getCocktailsByFirstName,
             clearSearchResults,

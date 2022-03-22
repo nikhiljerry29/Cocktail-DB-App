@@ -1,14 +1,18 @@
 import React, { useContext, useState } from "react";
 import CocktailContext from "../../context/cocktail/CocktailContext";
+import AlertContext from "../../context/alert/AlertContext";
 
 function CocktailSearch() {
    const [text, setText] = useState("");
    const { cocktails, getCocktailsByFirstName, clearSearchResults } =
       useContext(CocktailContext);
 
+   const { setAlertMsg } = useContext(AlertContext);
+
    const handleSubmit = (e) => {
       e.preventDefault();
-      getCocktailsByFirstName(text);
+      if (text === "") setAlertMsg("Do input text for some exicting stuff ");
+      else getCocktailsByFirstName(text);
    };
 
    const handleChange = (e) => {
@@ -38,7 +42,7 @@ function CocktailSearch() {
                Search
             </button>
          </div>
-         {cocktails.length > 0 && (
+         {cocktails && cocktails.length > 0 && (
             <button
                className='p-1.5 uppercase mt-2 rounded bg-slate-100'
                onClick={handleClear}

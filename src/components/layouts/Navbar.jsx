@@ -20,7 +20,7 @@ function Navbar() {
                   Home
                </NavLink>
                <NavLink
-                  to='/cocktail/random'
+                  to='/random'
                   activeclassname='active'
                   className='nav__link'
                >

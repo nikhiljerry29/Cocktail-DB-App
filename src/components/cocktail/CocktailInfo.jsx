@@ -34,53 +34,57 @@ function CocktailInfo({ cocktail }) {
    }, []);
 
    return (
-      <section
-         id={idDrink}
-         className='flex flex-col lg:flex-row gap-5 md:justify-center'
-      >
+      <>
          {strDrinkThumb && (
-            <img
-               effect='blur'
-               className='w-full h-72 md:h-96 lg:h-auto lg:max-w-lg object-cover rounded-lg shadow-xl'
-               alt={strDrink}
-               src={strDrinkThumb}
-            />
-         )}
-         <div className='lg:max-w-md'>
-            <h1 className='text-gray-900 text-3xl font-bold tracking-wide capitalize'>
-               {strDrink}
-            </h1>
-            <p className='text-gray-700 text-md my-3'>{strInstructions}</p>
-            <div className='flex flex-wrap gap-3'>
-               <Badge color='bg-yellow-100 text-yellow-800'>
-                  <FaGlassWhiskey />
-                  {strAlcoholic}
-               </Badge>
-               <Badge color='bg-pink-100 text-pink-800'>
-                  <BiCategoryAlt />
-                  {strCategory}
-               </Badge>
-               <Badge color='bg-green-100 text-green-800'>
-                  <FaWineGlassAlt />
-                  {strGlass}
-               </Badge>
-            </div>
+            <section
+               id={idDrink}
+               className='flex flex-col lg:flex-row gap-5 md:justify-center'
+            >
+               <img
+                  effect='blur'
+                  className='w-full h-72 md:h-96 lg:h-auto lg:max-w-lg object-cover rounded-lg shadow-xl'
+                  alt={strDrink}
+                  src={strDrinkThumb}
+               />
+               <div className='lg:max-w-md'>
+                  <h1 className='text-gray-900 text-3xl font-bold tracking-wide capitalize'>
+                     {strDrink}
+                  </h1>
+                  <p className='text-gray-700 text-md my-3'>
+                     {strInstructions}
+                  </p>
+                  <div className='flex flex-wrap gap-3'>
+                     <Badge color='bg-yellow-100 text-yellow-800'>
+                        <FaGlassWhiskey />
+                        {strAlcoholic}
+                     </Badge>
+                     <Badge color='bg-pink-100 text-pink-800'>
+                        <BiCategoryAlt />
+                        {strCategory}
+                     </Badge>
+                     <Badge color='bg-green-100 text-green-800'>
+                        <FaWineGlassAlt />
+                        {strGlass}
+                     </Badge>
+                  </div>
 
-            <h3 className='my-3 text-lg font-semibold'>Ingredients</h3>
-            <ul>
-               {ingredientList.map((item) => (
-                  <li
-                     className='flex flex-row justify-between p-3 bg-zinc-50 my-2 hover:bg-zinc-200 hover:text-zinc-900 hover:shadow-md hover:translate-x-3 transition duration-300 ease-in-out capitalize'
-                     key={item.id}
-                     id={item.id}
-                  >
-                     <span>{item.ingredient}</span>
-                     <span>{item.measure}</span>
-                  </li>
-               ))}
-            </ul>
-         </div>
-      </section>
+                  <h3 className='my-3 text-lg font-semibold'>Ingredients</h3>
+                  <ul>
+                     {ingredientList.map((item) => (
+                        <li
+                           className='flex flex-row justify-between p-3 bg-zinc-50 my-2 hover:bg-zinc-200 hover:text-zinc-900 hover:shadow-md hover:translate-x-3 transition duration-300 ease-in-out capitalize'
+                           key={item.id}
+                           id={item.id}
+                        >
+                           <span>{item.ingredient}</span>
+                           <span>{item.measure}</span>
+                        </li>
+                     ))}
+                  </ul>
+               </div>
+            </section>
+         )}
+      </>
    );
 }
 

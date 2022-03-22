@@ -9,16 +9,6 @@ import Badge from "../shared/Badge";
 function CocktailResults() {
    const { cocktails, isLoading } = useContext(CocktailContext);
 
-   // const {
-   //    idDrink,
-   //    strDrink,
-   //    strCategory,
-   //    strAlcoholic,
-   //    strGlass,
-   //    strInstructions,
-   //    strDrinkThumb,
-   // } = cocktail;
-
    if (isLoading) return <Loader />;
    return (
       <div className='my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 w-full'>
@@ -54,7 +44,7 @@ function CocktailResults() {
 
                   <div className='inline-flex mt-3'>
                      <Link
-                        to={"#"}
+                        to={`/cocktail/${cocktail.idDrink}`}
                         className='flex items-center uppercase px-2.5 py-2 bg-slate-50 rounded hover:font-bold hover:bg-slate-100'
                      >
                         Grab Recipe <FaChevronRight className='ml-2 text-xl' />
