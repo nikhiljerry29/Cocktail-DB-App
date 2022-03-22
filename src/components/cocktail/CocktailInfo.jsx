@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BiCategoryAlt } from "react-icons/bi";
 import { FaGlassWhiskey, FaWineGlassAlt } from "react-icons/fa";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 import Badge from "../shared/Badge";
 
 function CocktailInfo({ cocktail }) {
@@ -31,18 +29,17 @@ function CocktailInfo({ cocktail }) {
             });
          }
       }
-
-      console.log(lists);
       setIngredientList(lists);
-   }, [cocktail]);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
 
    return (
       <section
          id={idDrink}
-         className='p-5 flex flex-col lg:flex-row gap-5 md:justify-center'
+         className='flex flex-col lg:flex-row gap-5 md:justify-center'
       >
          {strDrinkThumb && (
-            <LazyLoadImage
+            <img
                effect='blur'
                className='w-full h-72 md:h-96 lg:h-auto lg:max-w-lg object-cover rounded-lg shadow-xl'
                alt={strDrink}

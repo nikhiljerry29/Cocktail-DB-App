@@ -13,7 +13,6 @@ function Cocktail() {
    }, []);
 
    if (isLoading) return <Loader />;
-
    return cocktail && <CocktailInfo cocktail={cocktail} />;
 }
 

@@ -9,18 +9,14 @@ function Navbar() {
             <div className='flex items-center'>
                <GiGlassShot className='text-4xl text-slate-600' />
                <NavLink
-                  to='/'
+                  to='/about'
                   className='font-stylescript text-gray-900 text-3xl font-bold pt-1 inline'
                >
                   Sip Bar.
                </NavLink>
             </div>
             <nav className='flex items-center gap-3'>
-               <NavLink
-                  to='/'
-                  activeclassname='active'
-                  className='nav__link hidden md:block'
-               >
+               <NavLink to='/' activeclassname='active' className='nav__link '>
                   Home
                </NavLink>
                <NavLink
@@ -33,7 +29,7 @@ function Navbar() {
                <NavLink
                   to='/about'
                   activeclassname='active'
-                  className='nav__link'
+                  className='nav__link hidden md:block'
                >
                   About
                </NavLink>

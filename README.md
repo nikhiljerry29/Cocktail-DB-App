@@ -1,6 +1,6 @@
 # Sip Bar | CocktailDB
 
-The drinks recipes react app using [The CocktailDB API](https://www.thecocktaildb.com/api.php) for fetching different drinks data.
+The drinks recipes react app using [The CocktailDB API](https://www.thecocktaildb.com/api.php) for fetching different drinks data. If anyone wants to play around with the API, they can use my [Postman Collection](https://www.getpostman.com/collections/2ad0ca409f240ec68977).
 
 ### List of Tools/Libraries/Frameworks Used
 

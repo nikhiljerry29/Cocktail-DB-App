@@ -14,7 +14,7 @@ function App() {
             <div className='font-poppins flex flex-col justify-between min-h-screen'>
                <div>
                   <Navbar />
-                  <div className='container mx-auto mt-6'>
+                  <div className='container mx-auto mt-6 p-5'>
                      <Routes>
                         <Route exact path='/' element={<Home />} />
                         <Route path='/about' element={<About />} />
