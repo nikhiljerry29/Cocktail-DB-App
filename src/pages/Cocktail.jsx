@@ -5,11 +5,11 @@ import Loader from "../components/layouts/Loader";
 import CocktailContext from "../context/cocktail/CocktailContext";
 
 function Cocktail() {
-   const { cocktail, getCocktail, isLoading } = useContext(CocktailContext);
+   const { cocktail, getCocktailById, isLoading } = useContext(CocktailContext);
    const { id } = useParams();
 
    useEffect(() => {
-      getCocktail(id);
+      getCocktailById(id);
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 

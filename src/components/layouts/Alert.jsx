@@ -6,7 +6,7 @@ function Alert() {
    if (alert !== "")
       return (
          <div
-            className='p-4 mb-4 text-sm text-orange-700 bg-orange-100 rounded-lg '
+            className='p-4 mb-4 text-sm text-orange-700 bg-orange-100 rounded-lg max-w-lg'
             role='alert'
          >
             {alert}

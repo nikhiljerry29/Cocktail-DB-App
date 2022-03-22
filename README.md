@@ -6,13 +6,14 @@ The drinks recipes react app using [The CocktailDB API](https://www.thecocktaild
 
 1. [React](https://reactjs.org/)
 2. [TailwindCSS](https://tailwindcss.com/)
+3. [react-lazy-load-image-component](https://www.npmjs.com/package/react-lazy-load-image-component)
 
-### Resources Used
+### Resources Used for Development
 
 1. [Cocktail icon - Flaticon](https://www.flaticon.com/free-icons/cocktail)
-2. [react-lazy-load-image-component](https://www.npmjs.com/package/react-lazy-load-image-component)
-3. [React-Icons]()
-4. [Flowbite]()
+2. [React-Icons](https://react-icons.github.io/react-icons)
+3. [Flowbite](https://flowbite.com/)
+4. [Card Template](https://ordinarycoders.com/blog/article/17-tailwindcss-cards) by [Sanjay Sanjel](https://codepen.io/sanjaysanjel)
 
 ### Instruction
 
@@ -24,11 +25,10 @@ _Basic Instructions for project_
 npm install
 ```
 
-2. Create `.env` file at root location and intialise below keys.
+2. Create `.env` file at root location and intialise below key(s).
 
 ```
-TOKEN=
-SECRET_KEY=
+REACT_APP_COCKTAILDB_URL="https://www.thecocktaildb.com/api/json/v1/1/"
 ```
 
 3. Run the application by following command
@@ -37,6 +37,6 @@ SECRET_KEY=
 npm start
 ```
 
-> _Copyright © Year, **Nikhil Gupta**_
+> _Copyright © 2022, **Nikhil Gupta**_
 
 ---

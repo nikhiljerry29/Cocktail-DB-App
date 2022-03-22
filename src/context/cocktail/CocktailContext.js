@@ -42,7 +42,7 @@ export const CocktailProvider = ({ children }) => {
    };
 
    // Get a cocktail
-   const getCocktail = async (id) => {
+   const getCocktailById = async (id) => {
       setCocktail(null);
       setIsLoading(true);
 
@@ -62,7 +62,7 @@ export const CocktailProvider = ({ children }) => {
             isLoading,
             cocktails,
             getRandomCocktail,
-            getCocktail,
+            getCocktailById,
             setIsLoading,
             getCocktailsByFirstName,
             clearSearchResults,
