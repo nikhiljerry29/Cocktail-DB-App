@@ -4,7 +4,7 @@ import React from "react";
 function Badge({ children, color }) {
    return (
       <div
-         className={`bg-${color}-100 text-${color}-800 text-sm font-semibold inline-flex items-center px-2 py-1 gap-2 rounded shadow-sm capitalize`}
+         className={`${color} text-sm font-semibold inline-flex items-center px-2 py-1 gap-2 rounded shadow-sm capitalize`}
       >
          {children}
       </div>

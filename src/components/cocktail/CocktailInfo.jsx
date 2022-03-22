@@ -54,15 +54,15 @@ function CocktailInfo({ cocktail }) {
                      {strInstructions}
                   </p>
                   <div className='flex flex-wrap gap-3'>
-                     <Badge color='yellow'>
+                     <Badge color='bg-yellow-100 text-yellow-800'>
                         <FaGlassWhiskey />
                         {strAlcoholic}
                      </Badge>
-                     <Badge color='pink'>
+                     <Badge color='bg-green-100 text-green-800'>
                         <BiCategoryAlt />
                         {strCategory}
                      </Badge>
-                     <Badge color='green'>
+                     <Badge color='bg-orange-100 text-orange-800'>
                         <FaWineGlassAlt />
                         {strGlass}
                      </Badge>
