@@ -21,7 +21,7 @@ export const CocktailProvider = ({ children }) => {
    const getCocktailsByFirstName = async (text) => {
       setIsLoading(true);
       const lowerCaseText = text.toLowerCase();
-      console.log(lowerCaseText);
+
       const params = new URLSearchParams({
          f: lowerCaseText[0],
       });

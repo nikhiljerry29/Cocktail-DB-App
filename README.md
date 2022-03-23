@@ -6,6 +6,7 @@ The drinks recipes react app using [The CocktailDB API](https://www.thecocktaild
 
 1. [React](https://reactjs.org/)
 2. [TailwindCSS](https://tailwindcss.com/)
+3. [Framer-Motion](https://framer.com)
 
 ### Resources Used for Development
 
