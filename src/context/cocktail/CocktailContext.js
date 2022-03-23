@@ -27,9 +27,10 @@ export const CocktailProvider = ({ children }) => {
       const items = await cocktailDB.get(`/search.php?${params}`);
 
       if (items.data.drinks !== null) {
-         const data = items.data.drinks.filter((item) =>
-            item.strDrink.toLowerCase().includes(text)
-         );
+         const data = items.data.drinks;
+         // const data = items.data.drinks.filter((item) =>
+         //    item.strDrink.toLowerCase().includes(text)
+         // );
          setCocktails(data);
       } else {
          setCocktails([]);
