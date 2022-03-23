@@ -20,17 +20,17 @@ export const CocktailProvider = ({ children }) => {
    // search by first name of cocktail
    const getCocktailsByFirstName = async (text) => {
       setIsLoading(true);
-      const firstLetter = text.toLowerCase();
+      const lowerCaseText = text.toLowerCase();
+      console.log(lowerCaseText);
       const params = new URLSearchParams({
-         f: firstLetter[0],
+         f: lowerCaseText[0],
       });
       const items = await cocktailDB.get(`/search.php?${params}`);
 
       if (items.data.drinks !== null) {
-         const data = items.data.drinks;
-         // const data = items.data.drinks.filter((item) =>
-         //    item.strDrink.toLowerCase().includes(text)
-         // );
+         const data = items.data.drinks.filter((item) =>
+            item.strDrink.toLowerCase().includes(lowerCaseText)
+         );
          setCocktails(data);
       } else {
          setCocktails([]);

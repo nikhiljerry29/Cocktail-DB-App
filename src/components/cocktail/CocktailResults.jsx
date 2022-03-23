@@ -17,12 +17,12 @@ function CocktailResults() {
                   key={cocktail.idDrink}
                   id={cocktail.idDrink}
                >
+                  {cocktail.idDrink}
                   <img
                      src={cocktail.strDrinkThumb}
                      alt={cocktail.strDrink}
                      className='w-full h-72 object-cover rounded-lg shadow-lg'
                   />
-
                   <div className='relative px-10 -mt-16'>
                      <div
                         className='bg-zinc-50/80

@@ -6,7 +6,6 @@ The drinks recipes react app using [The CocktailDB API](https://www.thecocktaild
 
 1. [React](https://reactjs.org/)
 2. [TailwindCSS](https://tailwindcss.com/)
-3. [react-lazy-load-image-component](https://www.npmjs.com/package/react-lazy-load-image-component)
 
 ### Resources Used for Development
 
