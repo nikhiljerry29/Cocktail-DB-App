@@ -7,14 +7,14 @@ const COCKTAIL_URL = process.env.REACT_APP_COCKTAILDB_URL;
 export const CocktailProvider = ({ children }) => {
    const [cocktail, setCocktail] = useState({});
    const [isLoading, setIsLoading] = useState(false);
-   const [cocktails, setCocktails] = useState([]);
+   const [cocktails, setCocktails] = useState(null);
 
    const cocktailDB = axios.create({
       baseURL: COCKTAIL_URL,
    });
 
    const clearSearchResults = () => {
-      setCocktails([]);
+      setCocktails(null);
    };
 
    // search by first name of cocktail
@@ -26,7 +26,14 @@ export const CocktailProvider = ({ children }) => {
       });
       const items = await cocktailDB.get(`/search.php?${params}`);
 
-      setCocktails(items.data.drinks);
+      if (items.data.drinks !== null) {
+         const data = items.data.drinks.filter((item) =>
+            item.strDrink.toLowerCase().includes(text)
+         );
+         setCocktails(data);
+      } else {
+         setCocktails([]);
+      }
       setIsLoading(false);
    };
 
