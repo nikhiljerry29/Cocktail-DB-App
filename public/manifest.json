@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Sip Bar",
+  "name": "Sip Bar | CocktailDB React App",
   "icons": [
     {
       "src": "cocktail64.png",

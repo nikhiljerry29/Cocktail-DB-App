@@ -1,6 +1,5 @@
 import React from "react";
 import { FaHeart } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 function Footer() {
    const footerYear = new Date().getFullYear();
@@ -18,9 +17,6 @@ function Footer() {
                Nikhil Gupta
             </a>
          </p>
-         <Link to='/about' className='font-stylescript font-semibold text-xl '>
-            Sip Bar
-         </Link>
       </footer>
    );
 }

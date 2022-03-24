@@ -1,8 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { BiCategoryAlt } from "react-icons/bi";
-import { FaGlassWhiskey, FaHome, FaWineGlassAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { FaGlassWhiskey, FaWineGlassAlt } from "react-icons/fa";
+import BackToHome from "../shared/BackToHome";
 import Badge from "../shared/Badge";
 
 function CocktailInfo({ cocktail }) {
@@ -36,14 +36,7 @@ function CocktailInfo({ cocktail }) {
 
    return (
       <>
-         <Link
-            to={"/"}
-            className='md:hidden flex w-fit mb-3 gap-2 items-center p-2 border-2 hover:border-gray-500 border-white bg-gray-50'
-         >
-            <FaHome />
-            Back To Home
-         </Link>
-
+         <BackToHome />
          <AnimatePresence>
             {strDrinkThumb && (
                <motion.div

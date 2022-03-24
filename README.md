@@ -15,6 +15,7 @@ The drinks recipes react app using [The CocktailDB API](https://www.thecocktaild
 3. [Flowbite](https://flowbite.com/)
 4. [Card Template](https://ordinarycoders.com/blog/article/17-tailwindcss-cards) by [Sanjay Sanjel](https://codepen.io/sanjaysanjel)
 5. [Happy Hour GIF](https://giphy.com/gifs/studiosoriginals-26n6xrzonxR7plW9y)
+6. [Cooling Lemon Juice Sticker](https://giphy.com/stickers/lemon-lemonade-citrus-dU5vy5VhEqPToSHXAm)
 
 ### Instruction
 
