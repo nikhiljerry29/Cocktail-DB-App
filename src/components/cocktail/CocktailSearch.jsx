@@ -13,7 +13,10 @@ function CocktailSearch() {
       e.preventDefault();
 
       if (text === "")
-         setAlertMsg("Hey blank things won't help in finding some exciting stuff!", "error");
+         setAlertMsg(
+            "Hey blank things won't help in finding some exciting stuff!",
+            "error"
+         );
       else {
          dispatch({
             type: "SET_LOADING",
@@ -54,6 +57,7 @@ function CocktailSearch() {
                onChange={handleChange}
                value={text}
                autoComplete='off'
+               autoFocus='true'
             />
             <button
                type='submit'

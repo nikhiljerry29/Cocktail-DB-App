@@ -1,6 +1,5 @@
 import React from "react";
 import BackToHome from "../components/shared/BackToHome";
-import { HiMail } from "react-icons/hi";
 
 function About() {
    return (
