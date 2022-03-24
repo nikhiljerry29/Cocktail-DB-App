@@ -4,7 +4,7 @@ import AlertContext from "../../context/alert/AlertContext";
 
 function CocktailSearch() {
    const [text, setText] = useState("");
-   const { cocktails, getCocktailsByFirstName, clearSearchResults } =
+   const { cocktails, getCocktailsByName, clearSearchResults } =
       useContext(CocktailContext);
 
    const { setAlertMsg } = useContext(AlertContext);
@@ -12,7 +12,7 @@ function CocktailSearch() {
    const handleSubmit = (e) => {
       e.preventDefault();
       if (text === "") setAlertMsg("Do input text for some exciting stuff ");
-      else getCocktailsByFirstName(text);
+      else getCocktailsByName(text);
    };
 
    const handleChange = (e) => {

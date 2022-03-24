@@ -1,13 +1,19 @@
 import axios from "axios";
-import { createContext, useState } from "react";
+import { createContext, useReducer, useState } from "react";
+import cocktailReducer from "./CocktailReducer";
 
 const CocktailContext = createContext();
 const COCKTAIL_URL = process.env.REACT_APP_COCKTAILDB_URL;
 
 export const CocktailProvider = ({ children }) => {
-   const [cocktail, setCocktail] = useState({});
-   const [isLoading, setIsLoading] = useState(false);
    const [cocktails, setCocktails] = useState(null);
+
+   const initialState = {
+      isLoading: false,
+      cocktail: null,
+   };
+
+   const [state, dispatch] = useReducer(cocktailReducer, initialState);
 
    const cocktailDB = axios.create({
       baseURL: COCKTAIL_URL,
@@ -18,8 +24,11 @@ export const CocktailProvider = ({ children }) => {
    };
 
    // search by first name of cocktail
-   const getCocktailsByFirstName = async (text) => {
-      setIsLoading(true);
+   const getCocktailsByName = async (text) => {
+      dispatch({
+         type: "SET_LOADING",
+      });
+
       const lowerCaseText = text.toLowerCase();
 
       const params = new URLSearchParams({
@@ -35,45 +44,16 @@ export const CocktailProvider = ({ children }) => {
       } else {
          setCocktails([]);
       }
-      setIsLoading(false);
-   };
-
-   // Get a random cocktail
-   const getRandomCocktail = async () => {
-      setCocktail(null);
-      setIsLoading(true);
-
-      const item = await cocktailDB.get("/random.php");
-      setCocktail(item.data.drinks[0]);
-
-      setIsLoading(false);
-   };
-
-   // Get a cocktail
-   const getCocktailById = async (id) => {
-      setCocktail(null);
-      setIsLoading(true);
-
-      const params = new URLSearchParams({
-         i: id,
-      });
-      const idCocktail = await cocktailDB.get(`/lookup.php?${params}`);
-      setCocktail(idCocktail.data.drinks[0]);
-
-      setIsLoading(false);
    };
 
    return (
       <CocktailContext.Provider
          value={{
-            cocktail,
-            isLoading,
+            ...state,
             cocktails,
-            getRandomCocktail,
-            getCocktailById,
-            setIsLoading,
-            getCocktailsByFirstName,
+            getCocktailsByName,
             clearSearchResults,
+            dispatch,
          }}
       >
          {children}
