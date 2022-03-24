@@ -1,18 +1,27 @@
 import React, { useContext, useState } from "react";
 import CocktailContext from "../../context/cocktail/CocktailContext";
 import AlertContext from "../../context/alert/AlertContext";
+import { getCocktailsByName } from "../../context/cocktail/CocktailActions";
 
 function CocktailSearch() {
    const [text, setText] = useState("");
-   const { cocktails, getCocktailsByName, clearSearchResults } =
-      useContext(CocktailContext);
+   const { cocktails, dispatch } = useContext(CocktailContext);
 
    const { setAlertMsg } = useContext(AlertContext);
 
-   const handleSubmit = (e) => {
+   const handleSubmit = async (e) => {
       e.preventDefault();
       if (text === "") setAlertMsg("Do input text for some exciting stuff ");
-      else getCocktailsByName(text);
+      else {
+         dispatch({
+            type: "SET_LOADING",
+         });
+         const items = await getCocktailsByName(text);
+         dispatch({
+            type: "GET_COCKTAILS",
+            payload: items,
+         });
+      }
    };
 
    const handleChange = (e) => {
@@ -21,7 +30,9 @@ function CocktailSearch() {
 
    const handleClear = () => {
       setText("");
-      clearSearchResults();
+      dispatch({
+         type: "CLEAR_COCKTAILS",
+      });
    };
 
    return (
