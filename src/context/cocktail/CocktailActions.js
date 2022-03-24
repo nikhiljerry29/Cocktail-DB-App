@@ -7,16 +7,16 @@ const cocktailDB = axios.create({
 
 // Get list of all cocktails matched with searched text
 export const getCocktailsByName = async (text) => {
-   const lowerCaseText = text.toLowerCase();
+   const transformedText = text.toLowerCase().trim();
 
    const params = new URLSearchParams({
-      f: lowerCaseText[0],
+      f: transformedText[0],
    });
    const items = await cocktailDB.get(`/search.php?${params}`);
 
    if (items.data.drinks !== null) {
       const data = items.data.drinks.filter((item) =>
-         item.strDrink.toLowerCase().includes(lowerCaseText)
+         item.strDrink.toLowerCase().includes(transformedText)
       );
       return data;
    } else {

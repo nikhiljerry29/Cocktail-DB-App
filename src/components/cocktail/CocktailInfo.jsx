@@ -38,7 +38,7 @@ function CocktailInfo({ cocktail }) {
       <>
          <Link
             to={"/"}
-            className='flex w-fit mb-3 gap-2 items-center p-2 border-2 hover:border-gray-500 border-white bg-gray-50'
+            className='md:hidden flex w-fit mb-3 gap-2 items-center p-2 border-2 hover:border-gray-500 border-white bg-gray-50'
          >
             <FaHome />
             Back To Home
