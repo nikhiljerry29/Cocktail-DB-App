@@ -11,16 +11,25 @@ function CocktailSearch() {
 
    const handleSubmit = async (e) => {
       e.preventDefault();
-      if (text === "") setAlertMsg("Do input text for some exciting stuff ");
+
+      if (text === "")
+         setAlertMsg("Do input text for some exciting stuff!", "error");
       else {
          dispatch({
             type: "SET_LOADING",
          });
+
          const items = await getCocktailsByName(text);
          dispatch({
             type: "GET_COCKTAILS",
             payload: items,
          });
+
+         if (items.length === 0)
+            setAlertMsg(
+               "No such results found, try another keyword or just simply write any letter !!",
+               "warning"
+            );
       }
    };
 
@@ -55,23 +64,12 @@ function CocktailSearch() {
          </div>
 
          {cocktails && (
-            <>
-               <button
-                  className='px-2.5 py-2 uppercase mt-2 rounded bg-slate-100'
-                  onClick={handleClear}
-               >
-                  Clear Search
-               </button>
-               {cocktails.length === 0 && (
-                  <div
-                     className='p-4 my-4 text-sm text-yellow-700 bg-yellow-100 rounded-lg max-w-lg'
-                     role='alert'
-                  >
-                     No such results found, try another keyword or just simply
-                     write any letter !!
-                  </div>
-               )}
-            </>
+            <button
+               className='px-2.5 py-2 uppercase mt-2 rounded bg-slate-100'
+               onClick={handleClear}
+            >
+               Clear Search
+            </button>
          )}
       </form>
    );

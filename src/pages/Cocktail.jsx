@@ -29,6 +29,7 @@ function Cocktail() {
       };
 
       setCocktailById();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [keyword, dispatch]);
 
    if (isLoading) return <Loader />;

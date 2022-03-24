@@ -40,19 +40,13 @@ function Navbar() {
                className='hidden md:block flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-4 mt-3 md:mt-0'
                id='navbarMenu'
             >
-               <NavLink
-                  to='/'
-                  activeclassname='active'
-                  className='nav__link'
-                  onClick={toggleMenu}
-               >
+               <NavLink to='/' activeclassname='active' className='nav__link'>
                   Home
                </NavLink>
                <NavLink
                   to='/cocktail/random'
                   activeclassname='active'
                   className='nav__link'
-                  onClick={toggleMenu}
                >
                   Random Mix
                </NavLink>
@@ -60,7 +54,6 @@ function Navbar() {
                   to='/about'
                   activeclassname='active'
                   className='nav__link'
-                  onClick={toggleMenu}
                >
                   About
                </NavLink>
