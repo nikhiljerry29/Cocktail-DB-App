@@ -24,17 +24,16 @@ export const getCocktailsByName = async (text) => {
    }
 };
 
-// Get a random cocktail
-export const getRandomCocktail = async () => {
-   const item = await cocktailDB.get("/random.php");
-   return item.data.drinks[0];
-};
-
-// Get a cocktail by its ID
-export const getCocktailById = async (id) => {
-   const params = new URLSearchParams({
-      i: id,
-   });
-   const idCocktail = await cocktailDB.get(`/lookup.php?${params}`);
-   return idCocktail.data.drinks[0];
+// Get a random or ID cocktail
+export const getCocktail = async (keyword) => {
+   if (keyword === "random") {
+      const item = await cocktailDB.get("/random.php");
+      return item.data.drinks[0];
+   } else {
+      const params = new URLSearchParams({
+         i: keyword,
+      });
+      const idCocktail = await cocktailDB.get(`/lookup.php?${params}`);
+      return idCocktail.data.drinks[0];
+   }
 };

@@ -49,7 +49,7 @@ function Navbar() {
                   Home
                </NavLink>
                <NavLink
-                  to='/random'
+                  to='/cocktail/random'
                   activeclassname='active'
                   className='nav__link'
                   onClick={toggleMenu}

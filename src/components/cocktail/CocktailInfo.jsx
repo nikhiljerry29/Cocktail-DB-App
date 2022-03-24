@@ -31,8 +31,7 @@ function CocktailInfo({ cocktail }) {
          }
       }
       setIngredientList(lists);
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, []);
+   }, [cocktail]);
 
    return (
       <>
