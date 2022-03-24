@@ -34,6 +34,9 @@ export const getCocktail = async (keyword) => {
          i: keyword,
       });
       const idCocktail = await cocktailDB.get(`/lookup.php?${params}`);
+
+      if (idCocktail.data.drinks === undefined) return {};
+
       return idCocktail.data.drinks[0];
    }
 };

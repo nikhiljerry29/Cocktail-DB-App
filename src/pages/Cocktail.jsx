@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import CocktailInfo from "../components/cocktail/CocktailInfo";
 import Loader from "../components/layouts/Loader";
 import { getCocktail } from "../context/cocktail/CocktailActions";
@@ -8,6 +8,8 @@ import CocktailContext from "../context/cocktail/CocktailContext";
 function Cocktail() {
    const { cocktail, isLoading, dispatch } = useContext(CocktailContext);
    const { keyword } = useParams();
+
+   const navigate = useNavigate();
 
    useEffect(() => {
       const setCocktailById = async () => {
@@ -20,6 +22,10 @@ function Cocktail() {
             type: "GET_COCKTAIL",
             payload: item,
          });
+
+         if (Object.keys(item).length === 0) {
+            navigate("/notfound");
+         }
       };
 
       setCocktailById();

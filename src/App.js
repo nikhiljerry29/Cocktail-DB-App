@@ -27,6 +27,7 @@ function App() {
                               path='/cocktail/:keyword'
                               element={<Cocktail />}
                            />
+                           <Route path='/notfound' element={<NotFound />} />
                            <Route path='*' element={<NotFound />} />
                         </Routes>
                      </div>
