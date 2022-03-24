@@ -8,6 +8,7 @@ import { CocktailProvider } from "./context/cocktail/CocktailContext";
 import About from "./pages/About";
 import Cocktail from "./pages/Cocktail";
 import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 
 function App() {
    return (
@@ -26,6 +27,7 @@ function App() {
                               path='/cocktail/:keyword'
                               element={<Cocktail />}
                            />
+                           <Route path='*' element={<NotFound />} />
                         </Routes>
                      </div>
                   </div>

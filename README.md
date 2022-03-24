@@ -14,6 +14,7 @@ The drinks recipes react app using [The CocktailDB API](https://www.thecocktaild
 2. [React-Icons](https://react-icons.github.io/react-icons)
 3. [Flowbite](https://flowbite.com/)
 4. [Card Template](https://ordinarycoders.com/blog/article/17-tailwindcss-cards) by [Sanjay Sanjel](https://codepen.io/sanjaysanjel)
+5. [Happy Hour GIF](https://giphy.com/gifs/studiosoriginals-26n6xrzonxR7plW9y)
 
 ### Instruction
 
