@@ -6,7 +6,7 @@ const CocktailContext = createContext();
 export const CocktailProvider = ({ children }) => {
    const initialState = {
       isLoading: false,
-      cocktail: null,
+      cocktail: {},
       cocktails: null,
    };
 
